@@ -1,0 +1,20 @@
+1. preprocessor.py : currently the main function has the 'documents.tokenized' file hardcoded. In order to run this file please change the name of the file required to process specifically on line 92 and 98. 
+	run: python preprocessor.py
+	output: <file_name>.processed 
+
+2. indexer.py : currently the main function has the 'documents.processed' file hardcoded. In order to run this file please change the name of the file required to process specifically on line 130. 
+	run: python indexer.py
+	output: dictionary.txt, postings.txt, docids.txt
+
+3. retriever.py : main function takes in dictionary.txt, postings.txt and docids.txt. Nothing to change here. 									
+	run: python retriever.py
+	output: input a query should give you top 10 results the docid, title, lineno and similarity score. Use 'q' to exit
+
+4. testing_plan.py : tested for preprocessor, indexer and retriever. Tested 4 cases for preprocesser and 2 for indexer.  						
+	run: python test_plan.py
+	preprocessor - Function test_someLinesPreprocess: will test three cases to filter, normalize, remove stop words and stem words
+	             - Function test_runPreprocess: used two files - SmallDoc.txt and SmallDoc2.txt to given a .processed file
+	             		- output: SmallDoc.processed and SmallDoc2.processed
+
+	indexer - Function test_runOfflineProcessing: will read in SmallDoc2.processed and SmallDoc.processed to output three files
+	             		- output: dictionary_SmallDoc2.txt, postings_SmallDoc2.txt, docids_SmallDOC2.txt
